@@ -1,12 +1,13 @@
 import React from "react";
+import Card from "./components/Card";
 
 const App = () => {
   return (
-    <div className="">
-      <div className="">
-        <h2 className="text-red-600">App</h2>
+    <>
+      <div className="content">
+        <Card />
       </div>
-    </div>
+    </>
   );
 };
 
