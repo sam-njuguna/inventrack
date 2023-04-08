@@ -2,7 +2,12 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        mobile: "450px",
+        tablet: "900px",
+      },
+    },
     borderColor: {
       bd: "#ccc",
     },

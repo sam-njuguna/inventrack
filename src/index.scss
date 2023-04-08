@@ -26,10 +26,10 @@ body {
   color: var(--dark);
 }
 .width {
-  @apply m-auto max-w-5xl;
+  @apply m-auto max-w-5xl max-mobile:w-[95%];
 }
 .all {
-  @apply m-auto max-w-2xl;
+  @apply m-auto max-w-2xl max-mobile:w-[98%];
 }
 
 .button {
@@ -51,8 +51,7 @@ body {
     font-weight: 500;
   }
   @media (max-width: 450px) {
-    width: 200px;
-    height: 40px;
+    width: 220px;
   }
   span:last-child {
     color: var(--light);
@@ -92,15 +91,27 @@ body {
   }
 }
 .delete {
-  background-color: #d80909b4;
+  background-color: #f17272;
+  border: 2px solid #ff4141;
   color: #ffffff;
+  @apply shadow-fade;
 }
 .edit,
 .select {
-  background-color: #d69e06d3;
+  background-color: #eec85f;
   color: #ffffff;
+  border: 2px solid #ffc72e;
+  @apply shadow-fade;
 }
 .add {
-  background-color: var(--green-var);
+  background-color: #6beb6b;
+  border: 2px solid #24dd24;
   color: #ffffff;
+  @apply shadow-fade;
+}
+.info-alert {
+  background-color: #76caf1;
+  border: 2px solid #3c96c0;
+  color: #ffffff;
+  @apply shadow-fade;
 }
