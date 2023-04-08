@@ -429,7 +429,7 @@ function App() {
                 </div>
 
                 <div
-                  className={`flex  gap-4 flex-col mt-4  p-4 max-mobile:px-0 overflow-hidden h-[250px] border-t-[2px] border-[#dadada]  ${
+                  className={`flex  gap-4 flex-col mt-4  p-4 max-mobile:px-1 overflow-hidden h-[250px] max-mobile:h-[350px] border-t-[2px] border-[#dadada]  ${
                     items.length > 2 && "overflow-y-scroll border-b-2"
                   }`}
                 >
