@@ -255,17 +255,17 @@ function App() {
   };
 
   return (
-    <div className="width flex flex-col justify-center items-center min-h-screen pt-8">
-      <div className="flex flex-col justify-center items-center gap-8 all ">
-        <h2 className="text-[3rem] font-bold max-mobile:text-[2rem] max-mobile:my-4">
+    <div className="width flex flex-col justify-center items-center min-h-screen pt-8 ">
+      <div className="flex flex-col justify-center items-center gap-8 width ">
+        <h2 className="text-[3rem] font-black max-mobile:text-[2rem] max-mobile:my-4">
           Budget Calculater
         </h2>
-        <div className="bg-white all relative">
+        <div className="all relative">
           {showAlert && (
-            <div className="alert">
-              <div className="fixed bottom-4 left-0 w-full z-20">
+            <div className="fixed bottom-4 left-0 right- w-full z-20">
+              <div className=" all max-mobile:px-2">
                 <div
-                  className={`h-[80px] text-center rounded mx-8 max-mobile:mx-4 flex justify-center items-center ${
+                  className={`h-[80px] text-center rounded  sm:w-[70%] max-mobile:w-full m-auto flex justify-center items-center  ${
                     showAlert.text ? `${showAlert.type}` : ""
                   }`}
                 >
@@ -284,7 +284,7 @@ function App() {
             onSubmit={handleSubmit}
             className="w-full flex flex-col gap-4 px-2 py-4"
           >
-            <div className="flex items-center max-mobile:flex-col max-mobile:w-full max-mobile:gap-y-8 gap-x-4">
+            <div className="flex items-center max-mobile:flex-col max-mobile:w-full max-mobile:gap-y-10 gap-x-4">
               <div className="relative">
                 <label htmlFor="charge" className="absolute -top-6 left-2">
                   Charge
@@ -364,7 +364,7 @@ function App() {
             <div className="flex items-center justify-center">
               <button
                 type="submit"
-                className=" w-full rounded shadow-fade  button"
+                className=" w-full rounded shadow-fade my-2 button"
               >
                 <span className="text-[18px] font-bold">
                   {editMode ? "Edit" : "Add"}
@@ -375,11 +375,11 @@ function App() {
               </button>
             </div>
           </form>
-          <div className="flex flex-col  bg-bg_var w-full  h-[350px]  max-tablet:mt-8">
+          <div className="flex flex-col bg-bg_var  min-h-[420px]  max-tablet:mt-8">
             {items.length > 0 ? (
               <div className="flex flex-col p-4">
                 <div>
-                  <div className="flex items-center  justify-between rounded  py-2 px-4 bg-bg mx-8 max-mobile:mx-0 my-4">
+                  <div className="flex items-center  justify-between rounded  py-2 px-4 bg-bg mx-8 max-mobile:mx-0 my-2">
                     <p className="font-bold">My list</p>
                     <div className="flex items-center gap-x-4 relative">
                       <p
@@ -429,7 +429,7 @@ function App() {
                 </div>
 
                 <div
-                  className={`flex  gap-4 flex-col mt-4  p-4 max-mobile:px-1 overflow-hidden h-[250px] max-mobile:h-[350px] border-t-[2px] border-[#dadada]  ${
+                  className={`flex  gap-4 flex-col mt-4  p-4 max-mobile:px-1 overflow-hidden h-[250px] max-mobile:h-[320px] border-t-[2px] border-[#dadada]  ${
                     items.length > 2 && "overflow-y-scroll border-b-2"
                   }`}
                 >
@@ -488,21 +488,23 @@ function App() {
                 </p>
               </div>
             )}
-          </div>
-          <div className="h-[80px] bg-bg_var">
-            {items.length > 0 && (
-              <div className="flex items-center justify-center text-[16px] pt-4 pb-2">
-                <p className="flex items-center gap-2  bg-bg w-full py-4 mx-8 max-mobile:mx-4 rounded justify-center">
-                  <span>Total:</span>
-                  <span className="text-[1.1rem] flex gap-2 font-bold">
-                    <span>
-                      {selectedCurrency ? `${currency.symbol}` : `${currency}`}
+            <div className="relative">
+              {items.length > 0 && (
+                <div className="flex items-center justify-center text-[16px]  pb-2">
+                  <p className="flex items-center gap-2  bg-bg w-full py-4 mx-8 max-mobile:mx-4 rounded justify-center">
+                    <span>Total:</span>
+                    <span className="text-[1.1rem] flex gap-2 font-bold">
+                      <span>
+                        {selectedCurrency
+                          ? `${currency.symbol}`
+                          : `${currency}`}
+                      </span>
+                      <span> {totalAmount}</span>
                     </span>
-                    <span> {totalAmount}</span>
-                  </span>
-                </p>
-              </div>
-            )}
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
