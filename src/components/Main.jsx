@@ -381,7 +381,7 @@ function App() {
                     <p className="font-bold">My list</p>
                     <div className="flex items-center gap-x-4 relative">
                       <p
-                        className="bg-bg_light text-[14px] rounded p-2 cursor-pointer duration-100 ease-out hover:bg-bg_var"
+                        className="bg-bg_light text-[14px] w-[90px] rounded p-2 cursor-pointer duration-100 ease-out hover:bg-bg_var"
                         onClick={handleSelectAll}
                       >
                         {selectAll ? (
