@@ -465,7 +465,7 @@ function App() {
                           }`}
                         />
 
-                        <div className="absolute top-2 right-8">
+                        <div className="absolute top-2 right-8 max-mobile:right-4">
                           <BsPencilFill
                             className="text-[1.2rem] cursor-pointer"
                             onClick={() => handleEdit(item.id)}
