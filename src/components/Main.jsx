@@ -479,7 +479,7 @@ function App() {
                 </div>
               </div>
             ) : (
-              <div className=" flex items-center justify-center text-center  h-[350px]">
+              <div className=" flex items-center justify-center text-center  h-[420px]">
                 <p className="text-[16px] font-bold flex flex-col items-center justify-center">
                   <span> Add a new list!</span>
                   <span className="text-[3rem]">
