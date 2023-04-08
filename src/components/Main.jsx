@@ -159,7 +159,6 @@ function App() {
     );
     // The state of items is updated with the newItems array.
     setItems(newItems);
-    setSelectAll(false);
     // The number of items selected is calculated by filtering the newItems array where the selected property is true.
     const numSelected = newItems.filter((item) => item.selected).length;
     // The appropriate grammar for item or items is determined based on whether one or
@@ -334,7 +333,7 @@ function App() {
                 </div>
 
                 {open && (
-                  <ul className="absolute top-[4.2rem] max-mobile:top-[9.5rem] z-[100] w-[220px] h-[200px] overflow-hidden overflow-y-scroll bg-bg_light_var gap-1 cursor-pointer rounded  flex flex-col shadow-fade border-[1px] border-[#dbdbdb]">
+                  <ul className="absolute top-[4.2rem] max-mobile:top-[9.8rem] z-[100] w-[220px] h-[200px] overflow-hidden overflow-y-scroll bg-bg_light_var gap-1 cursor-pointer rounded  flex flex-col shadow-fade border-[1px] border-[#dbdbdb]">
                     {currencies.map((currencies, i) => (
                       <li
                         onClick={() => {
@@ -343,7 +342,7 @@ function App() {
                           setOpen(false);
                         }}
                         key={i}
-                        className="text-[14px] flex items-center gap-1 font-medium hover:bg-bg_var  px-[14px] py-[10px]"
+                        className="text-[14px] flex items-center gap-2 font-medium hover:bg-bg_var  p-[14px] "
                       >
                         <input
                           type="checkbox"
