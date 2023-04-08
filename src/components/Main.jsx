@@ -159,7 +159,7 @@ function App() {
     );
     // The state of items is updated with the newItems array.
     setItems(newItems);
-
+    setSelectAll(false);
     // The number of items selected is calculated by filtering the newItems array where the selected property is true.
     const numSelected = newItems.filter((item) => item.selected).length;
     // The appropriate grammar for item or items is determined based on whether one or
@@ -168,7 +168,6 @@ function App() {
 
     handleAlert({
       type: "select",
-
       text: (
         <span className="flex items-center gap-2">
           <span className="text-[1.6rem]">{icons}</span>
@@ -344,7 +343,7 @@ function App() {
                           setOpen(false);
                         }}
                         key={i}
-                        className="text-[14px] flex items-center gap-1 font-medium hover:bg-bg_var  px-[14px] py-[7px]"
+                        className="text-[14px] flex items-center gap-1 font-medium hover:bg-bg_var  px-[14px] py-[10px]"
                       >
                         <input
                           type="checkbox"
