@@ -333,7 +333,7 @@ function App() {
                 </div>
 
                 {open && (
-                  <ul className="absolute top-[4.2rem] max-mobile:top-[9.8rem] z-[100] w-[220px] h-[200px] overflow-hidden overflow-y-scroll bg-bg_light_var gap-1 cursor-pointer rounded  flex flex-col shadow-fade border-[1px] border-[#dbdbdb]">
+                  <ul className="absolute top-[4.2rem] max-mobile:top-[10rem] z-[100] w-[220px] h-[200px] overflow-hidden overflow-y-scroll bg-bg_light_var gap-1 cursor-pointer rounded  flex flex-col shadow-fade border-[1px] border-[#dbdbdb]">
                     {currencies.map((currencies, i) => (
                       <li
                         onClick={() => {
