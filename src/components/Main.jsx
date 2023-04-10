@@ -506,14 +506,14 @@ function App() {
       <div className="fixed w-full top-0">
         <div className="width max-mobile:border-[#dadada] max-mobile:border-b-[1px]">
           <div className="flex items-center justify-between max-mobile:bg-bg_light_var py-2 ">
-            <img src="public/high.png" alt="" className="w-[130px]" />
+            <img src="public/logo.png" alt="" className="w-[130px]" />
 
             <div className="flex flex-col gap-2">
               <p className="text-[.8rem] font-medium">Let's link up!</p>
               <ul className="flex gap-4">
                 <li>
                   <a
-                    href="http://"
+                    href="https://www.linkedin.com/in/samson-njuguna-896a02243/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[1.2rem] duration-200 ease-out hover:text-[#3c019c]"
@@ -523,7 +523,7 @@ function App() {
                 </li>
                 <li>
                   <a
-                    href="http://"
+                    href="https://github.com/sam-njuguna"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[1.2rem] duration-200 ease-out hover:text-[#3c019c]"
@@ -533,7 +533,7 @@ function App() {
                 </li>
                 <li>
                   <a
-                    href="http://"
+                    href="https://discord.com/channels/Sam_x#1756"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[1.2rem] duration-200 ease-out hover:text-[#3c019c]"
