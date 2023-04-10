@@ -505,11 +505,7 @@ function App() {
       <div className="fixed w-full top-0">
         <div className="width max-mobile:border-[#dadada] max-mobile:border-b-[1px]">
           <div className="flex items-center justify-between max-mobile:bg-bg_light_var py-2 ">
-            <img
-              src="src/assets/high.png"
-              alt="high.png"
-              className="w-[130px]"
-            />
+            <img src="src/assets/high.png" alt="" className="w-[130px]" />
             <div className="flex flex-col gap-2">
               <p className="text-[.8rem] font-medium">Let's link up!</p>
               <ul className="flex gap-4">
