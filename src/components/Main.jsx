@@ -204,6 +204,7 @@ function App() {
     if (!editMode) {
       setEditMode(true);
       setEditId(id);
+      handleSelectAll(true);
       const itemToEdit = items.find((item) => item.id === id);
       setCharge(itemToEdit.charge);
       setAmount(itemToEdit.amount);
