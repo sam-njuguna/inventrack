@@ -272,9 +272,9 @@ function App() {
           </p>
         </div>
 
-        <div className="all relative">
+        <div className="all">
           {showAlert && (
-            <div className="fixed bottom-4 left-0 right- w-full z-20">
+            <div className="fixed top-4 left-0  w-full  h-screen ">
               <div className=" all max-mobile:px-2">
                 <div
                   className={`h-[80px] text-center rounded  sm:w-[70%] max-mobile:w-full m-auto flex justify-center items-center  ${
@@ -523,8 +523,8 @@ function App() {
       </motion.div>
       <div className="fixed w-full top-0">
         <div className="width max-mobile:border-[#dadada] max-mobile:border-b-[1px]">
-          <div className="flex items-center justify-between max-mobile:bg-bg_light_var ">
-            <img src="src/assets/logo.png" alt="" className="w-[130px] " />
+          <div className="flex items-center justify-between max-mobile:bg-bg_light_var py-2 ">
+            <img src="src/assets/high.png" alt="" className="w-[130px] " />
             <div className="flex flex-col gap-2">
               <p className="text-[.8rem] font-medium">Let's link up!</p>
               <ul className="flex gap-4">
