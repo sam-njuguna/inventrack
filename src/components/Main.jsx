@@ -108,7 +108,7 @@ function App() {
           text: (
             <span className="flex items-center gap-2">
               <MdAddTask className="text-[1.6rem]" />
-              <span>A new tem was added.</span>
+              <span>A new tem was added in the list.</span>
             </span>
           ),
         });
