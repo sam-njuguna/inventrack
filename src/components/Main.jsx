@@ -264,7 +264,7 @@ function App() {
         initial={{ opacity: 0, y: "20%" }}
         animate={{ opacity: 1, y: "0%" }}
         transition={{ duration: 1, ease: "easeInOut" }}
-        className="flex flex-col justify-center items-center  width pt-[3.7rem] max-mobile:pt-20"
+        className="flex flex-col justify-center items-center  width pt-[3.7rem] max-mobile:pt-24"
       >
         <div className="all ">
           <p className="mb-8">
