@@ -1,9 +1,12 @@
+import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
-import { BsCheck2, BsPencilFill, BsThreeDotsVertical } from "react-icons/bs";
 import {
-  MdOutlineKeyboardDoubleArrowDown,
-  MdOutlineLibraryAdd,
-} from "react-icons/md";
+  BsDiscord,
+  BsGithub,
+  BsPencilFill,
+  BsThreeDotsVertical,
+} from "react-icons/bs";
+import { FaLinkedinIn } from "react-icons/fa";
 import {
   MdAdd,
   MdAddTask,
@@ -13,6 +16,8 @@ import {
   MdDoneAll,
   MdEdit,
   MdWarning,
+  MdOutlineKeyboardDoubleArrowDown,
+  MdOutlineLibraryAdd,
 } from "react-icons/md";
 import { v4 as uuidv4 } from "uuid";
 
@@ -253,11 +258,20 @@ function App() {
   };
 
   return (
-    <div className="width flex flex-col justify-center items-center min-h-screen pt-8 ">
-      <div className="flex flex-col justify-center items-center gap-8 width ">
-        <h2 className="text-[3rem] font-black max-mobile:text-[2rem] max-mobile:my-4">
-          Budget Calculater
-        </h2>
+    <div className="width relative flex flex-col justify-center items-center min-h-[90vh] overflow-hidden pt-8 ">
+      <motion.div
+        initial={{ opacity: 0, y: "20%" }}
+        animate={{ opacity: 1, y: "0%" }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        className="flex flex-col justify-center items-center  width pt-[3.7rem] max-mobile:pt-20"
+      >
+        <div className="all ">
+          <p className="mb-8">
+            Manage inventory: add, edit, filter, delete items, track budget with
+            InvenTrack web app.
+          </p>
+        </div>
+
         <div className="all relative">
           {showAlert && (
             <div className="fixed bottom-4 left-0 right- w-full z-20">
@@ -290,8 +304,10 @@ function App() {
                 <input
                   type="text"
                   id="charge"
+                  autoComplete="text"
+                  autoCorrect=""
                   required
-                  className="w-[220px] max-mobile:w-[270px] h-[50px] p-[14px] border-[#dadada] border-[2px] focus:border-[#e40303] focus:border-2 rounded duration-100 transition"
+                  className="w-[220px] max-mobile:w-[270px] h-[50px] p-[14px] border-[#dadada] border-[2px] focus:border-[#4e00cc] focus:border-2 rounded duration-100 transition"
                   placeholder="e.g Rent"
                   value={charge}
                   onChange={(e) => setCharge(e.target.value)}
@@ -312,8 +328,9 @@ function App() {
                     type="number"
                     id="charge"
                     required
-                    className="w-[220px] max-mobile:w-[270px] h-[50px] p-[14px] overflow-hidden pl-20 border-[#dadada] border-[2px] focus:border-[#d10303] focus:border-2 rounded duration-100 transition"
+                    className="w-[220px] max-mobile:w-[270px] h-[50px] p-[14px] overflow-hidden pl-20 border-[#dadada] border-[2px] focus:border-[#4e00cc] focus:border-2 rounded duration-100 transition"
                     placeholder="e.g 100"
+                    autoComplete="number"
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
                     onClick={() => {
@@ -364,16 +381,14 @@ function App() {
                 type="submit"
                 className=" w-full rounded shadow-fade my-2 button"
               >
-                <span className="text-[18px] font-bold">
-                  {editMode ? "Edit" : "Add"}
-                </span>
+                <span className="text-[16px]">{editMode ? "Edit" : "Add"}</span>
                 <span className="icon">
                   <MdAdd />
                 </span>
               </button>
             </div>
           </form>
-          <div className="flex flex-col bg-bg_var  min-h-[420px]  max-tablet:mt-8">
+          <div className="flex flex-col bg-bg_var  min-h-[400px]  max-tablet:mt-8">
             {items.length > 0 ? (
               <div className="flex flex-col p-4">
                 <div>
@@ -427,7 +442,7 @@ function App() {
                 </div>
 
                 <div
-                  className={`flex  gap-4 flex-col mt-4  p-4 max-mobile:px-1 overflow-hidden h-[250px] max-mobile:h-[320px] border-t-[2px] border-[#dadada]  ${
+                  className={`flex  gap-4 flex-col mt-4  p-4 max-mobile:px-1 overflow-hidden h-[230px] max-mobile:h-[320px] border-t-[2px] border-[#dadada]  ${
                     items.length > 2 && "overflow-y-scroll border-b-2"
                   }`}
                 >
@@ -477,7 +492,7 @@ function App() {
                 </div>
               </div>
             ) : (
-              <div className=" flex items-center justify-center text-center  h-[420px]">
+              <div className=" flex items-center justify-center text-center  h-[400px]">
                 <p className="text-[16px] font-bold flex flex-col items-center justify-center">
                   <span> Add a new list!</span>
                   <span className="text-[3rem]">
@@ -502,6 +517,48 @@ function App() {
                   </p>
                 </div>
               )}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+      <div className="fixed w-full top-0">
+        <div className="width max-mobile:border-[#dadada] max-mobile:border-b-[1px]">
+          <div className="flex items-center justify-between max-mobile:bg-bg_light_var ">
+            <img src="src/assets/logo.png" alt="" className="w-[130px] " />
+            <div className="flex flex-col gap-2">
+              <p className="text-[.8rem] font-medium">Let's link up!</p>
+              <ul className="flex gap-4">
+                <li>
+                  <a
+                    href="http://"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[1.2rem] duration-200 ease-out hover:text-[#3c019c]"
+                  >
+                    <FaLinkedinIn />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="http://"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[1.2rem] duration-200 ease-out hover:text-[#3c019c]"
+                  >
+                    <BsGithub />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="http://"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[1.2rem] duration-200 ease-out hover:text-[#3c019c]"
+                  >
+                    <BsDiscord />
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
