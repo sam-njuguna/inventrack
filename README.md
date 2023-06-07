@@ -1,2 +1,2 @@
 # InvenTrack
- CRUD application designed for efficient inventory management, allowing users to easily add, delete, and edit items while providing real-time tracking of total prices.
+A robust CRUD (Create, Read, Update, Delete) application specifically developed for streamlined inventory management. With its user-friendly interface, users can effortlessly add new items to their inventory, remove obsolete ones, and conveniently make edits as needed. The application also includes a comprehensive feature that dynamically calculates and displays the total price of the inventory in real-time. InvenTrack empowers businesses and individuals to maintain accurate and up-to-date records of their inventory, ensuring efficient tracking and management of their products.
