@@ -533,7 +533,7 @@ function App() {
                 </li>
                 <li>
                   <a
-                    href="https://discord.com/channels/Sam_x#1756"
+                    href="https://discord.com/users/1038333075433721926"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[1.2rem] duration-200 ease-out hover:text-[#3c019c]"

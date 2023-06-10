@@ -10,7 +10,7 @@ const Loader = () => {
       transition: {
         duration: 0.5,
         ease: "easeInOut",
-        delay: 0.2, // Add a delay to the animation
+        delay: 0.2,
       },
     },
     exit: {
