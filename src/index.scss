@@ -29,10 +29,10 @@ body {
   }
 }
 .width {
-  @apply m-auto max-w-5xl px-12 max-mobile:px-6 max-tablet:px-16;
+  @apply m-auto max-w-5xl px-12 max-mobile_small:px-2 max-mobile:px-4 max-mobile_lg:px-6 max-tablet:px-16;
 }
 .all {
-  @apply m-auto max-w-2xl max-mobile:w-[100%];
+  @apply m-auto max-w-2xl max-mobile_lg:w-[100%];
 }
 
 .button {

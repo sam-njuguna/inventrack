@@ -162,11 +162,8 @@ function App() {
     const newItems = items.map((item) =>
       item.id === itemId ? { ...item, selected: !item.selected } : item
     );
-    // The state of items is updated with the newItems array.
     setItems(newItems);
-    // The number of items selected is calculated by filtering the newItems array where the selected property is true.
     const numSelected = newItems.filter((item) => item.selected).length;
-    // The appropriate grammar for item or items is determined based on whether one or
     const itemOrItems = numSelected === 1 ? "item" : "items";
     const icons = numSelected === 1 ? <MdCheck /> : <MdDoneAll />;
 
@@ -221,9 +218,7 @@ function App() {
   };
 
   const handleAlert = ({ type, text }) => {
-    // Update the state of showAlert to show the alert with the given type and text.
     setShowAlert({ show: true, type, text });
-    // Set a timeout to hide the alert after 2 seconds (2000 milliseconds).
     setTimeout(() => {
       setShowAlert({ show: false });
     }, 3000);
@@ -259,12 +254,12 @@ function App() {
   };
 
   return (
-    <div className="width relative flex flex-col justify-center items-center min-h-[90vh] overflow-hidden pt-8 ">
+    <div className="width relative flex flex-col justify-center items-center min-h-[90vh] pt-8 ">
       <motion.div
         initial={{ opacity: 0, y: "20%" }}
         animate={{ opacity: 1, y: "0%" }}
         transition={{ duration: 1, ease: "easeInOut" }}
-        className="flex flex-col justify-center items-center  width pt-[3.7rem] max-mobile:pt-24"
+        className="flex flex-col justify-center items-center  width pt-[4rem] max-mobile:pt-24 "
       >
         <div className="all ">
           <p className="mb-8">
@@ -278,8 +273,8 @@ function App() {
             onSubmit={handleSubmit}
             className="w-full flex flex-col gap-4 px-2 py-4"
           >
-            <div className="flex items-center max-mobile:flex-col max-mobile:w-full max-mobile:gap-y-10 gap-x-4">
-              <div className="relative">
+            <div className="flex items-center max-mobile_lg:flex-col w-full max-mobile_lg:gap-y-10 gap-x-4">
+              <div className="relative w-full">
                 <label htmlFor="charge" className="absolute -top-6 left-2">
                   Charge
                 </label>
@@ -289,7 +284,7 @@ function App() {
                   autoComplete="text"
                   autoCorrect=""
                   required
-                  className="w-[220px] max-mobile:w-[270px] h-[50px] p-[14px] border-[#dadada] border-[2px] focus:border-[#4e00cc] focus:border-2 rounded duration-100 transition"
+                  className="w-full h-[50px] p-[14px] border-[#dadada] border-[2px] focus:border-[#4e00cc] focus:border-2 rounded duration-100 transition"
                   placeholder="e.g Rent"
                   value={charge}
                   onChange={(e) => setCharge(e.target.value)}
@@ -301,7 +296,7 @@ function App() {
 
                 <span className="input-highlight"></span>
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col w-full">
                 <div className="relative group">
                   <label htmlFor="charge" className="absolute -top-6 left-2">
                     Amount
@@ -310,7 +305,7 @@ function App() {
                     type="number"
                     id="charge"
                     required
-                    className="w-[220px] max-mobile:w-[270px] h-[50px] p-[14px] overflow-hidden pl-20 border-[#dadada] border-[2px] focus:border-[#4e00cc] focus:border-2 rounded duration-100 transition"
+                    className="w-full h-[50px] p-[14px] overflow-hidden pl-20 border-[#dadada] border-[2px] focus:border-[#4e00cc] focus:border-2 rounded duration-100 transition"
                     placeholder="e.g 100"
                     autoComplete="number"
                     value={amount}
@@ -358,7 +353,7 @@ function App() {
                 )}
               </div>
             </div>
-            <div className="flex items-center justify-center">
+            <div className="flex items-center max-mobile:w-full  justify-center">
               <button
                 type="submit"
                 className=" w-full rounded shadow-fade my-2 button"
@@ -370,15 +365,17 @@ function App() {
               </button>
             </div>
           </form>
-          <div className="flex flex-col bg-bg_var  min-h-[400px]  max-tablet:mt-8">
+          <div className="flex flex-col bg-bg_var  min-h-[400px] w-full  max-tablet:mt-8">
             {items.length > 0 ? (
-              <div className="flex flex-col p-4">
+              <div className="flex flex-col p-2">
                 <div>
-                  <div className="flex items-center  justify-between rounded  py-2 px-4 bg-bg mx-8 max-mobile:mx-0 my-2">
-                    <p className="font-bold">My list</p>
+                  <div className="flex items-center  justify-between rounded  py-2 px-4 bg-bg mx-2 max-mobile:mx-0 my-2">
+                    <p className="font-bold max-mobile:text-[14px] max-mobile_small:hidden ">
+                      My list
+                    </p>
                     <div className="flex items-center gap-x-4 relative">
                       <p
-                        className="bg-bg_light text-[14px] w-[90px] rounded p-2 cursor-pointer duration-100 ease-out hover:bg-bg_var"
+                        className="bg-bg_light text-[14px] max-mobile:text-[12px] rounded p-2 cursor-pointer duration-100 ease-out hover:bg-bg_var"
                         onClick={handleSelectAll}
                       >
                         {selectAll ? (
@@ -390,7 +387,7 @@ function App() {
                         )}
                       </p>
                       <p
-                        className="bg-bg_light text-[14px] rounded p-2 cursor-pointer duration-100 ease-out hover:bg-bg_var"
+                        className="bg-bg_light text-[14px] max-mobile:text-[12px]  rounded p-2 cursor-pointer duration-100 ease-out hover:bg-bg_var"
                         onClick={handleDelete}
                       >
                         Delete

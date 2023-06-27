@@ -4,7 +4,9 @@ export default {
   theme: {
     extend: {
       screens: {
+        mobile_small: "350px",
         mobile: "450px",
+        mobile_lg: "765px",
         tablet: "900px",
       },
     },
