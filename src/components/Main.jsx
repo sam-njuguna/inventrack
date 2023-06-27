@@ -181,11 +181,16 @@ function App() {
   const handleSelectAll = () => {
     const newItems = items.map((item) => ({ ...item, selected: !selectAll }));
     setItems(newItems);
-    setSelectAll(!selectAll);
 
     const numSelected = newItems.filter((item) => item.selected).length;
     const itemOrItems = numSelected === 0 ? "item" : "items";
     const icons = numSelected === 0 ? <MdCheck /> : <MdDoneAll />;
+    if (numSelected > 0) {
+      setSelectAll(!selectAll);
+    } else {
+      setSelectAll(false);
+    }
+
     handleAlert({
       type: "select",
       text: (
@@ -253,6 +258,12 @@ function App() {
     }
   };
 
+  const handleSelect = () => {
+    if (sel === true) {
+      setSelectAll(true);
+    }
+    return setSelectAll(false);
+  };
   return (
     <div className="width relative flex flex-col justify-center items-center min-h-[90vh] pt-8 ">
       <motion.div
@@ -378,7 +389,7 @@ function App() {
                         className="bg-bg_light text-[14px] max-mobile:text-[12px] rounded p-2 cursor-pointer duration-100 ease-out hover:bg-bg_var"
                         onClick={handleSelectAll}
                       >
-                        {selectAll ? (
+                        {selectAll > 0 ? (
                           <span onClick={() => setSelectAll(false)}>
                             Unselect All
                           </span>
@@ -452,7 +463,7 @@ function App() {
                         <input
                           type="checkbox"
                           checked={item.selected}
-                          onClick={() => setSelectAll(true)}
+                          onClick={handleSelect}
                           onChange={() => handleItemSelect(item.id)}
                           className={`text-[1.2rem] cursor-pointer opacity-0 duration-500 group-hover:opacity-100 ${
                             selectAll && "opacity-100"
