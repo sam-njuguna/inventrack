@@ -258,7 +258,7 @@ function App() {
     }
   };
 
-  const handleSelect = () => {
+  const handleSelect = (sel) => {
     if (sel === true) {
       setSelectAll(true);
     }
@@ -556,7 +556,7 @@ function App() {
       </div>
       {showAlert && (
         <div className="fixed bottom-4 left-0 w-full">
-          <div className=" all max-mobile:px-2">
+          <div className=" all-alert">
             <div
               className={`h-[80px] text-center rounded  sm:w-[70%] max-mobile:w-full m-auto flex justify-center items-center  ${
                 showAlert.text ? `${showAlert.type}` : ""

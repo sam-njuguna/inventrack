@@ -34,6 +34,9 @@ body {
 .all {
   @apply m-auto max-w-2xl max-mobile_lg:w-[100%];
 }
+.all-alert {
+  @apply m-auto max-w-2xl max-mobile_lg:w-[85%];
+}
 
 .button {
   width: 220px;
