@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   BsDiscord,
   BsGithub,
@@ -49,6 +49,7 @@ function App() {
   const [open, setOpen] = useState(false);
   const [showAlert, setShowAlert] = useState({ show: false });
   const [clicked, setClicked] = useState(false);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     // Load items from local storage on mount
@@ -264,6 +265,20 @@ function App() {
     }
     return setSelectAll(false);
   };
+  // To close when its open and outside is clicked
+  const handleOutsideClick = (event) => {
+    if (containerRef.current && !containerRef.current.contains(event.target)) {
+      setOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
   return (
     <div className="width relative flex flex-col justify-center items-center min-h-[90vh] pt-8 ">
       <motion.div
@@ -307,7 +322,7 @@ function App() {
 
                 <span className="input-highlight"></span>
               </div>
-              <div className="flex flex-col w-full">
+              <div className="flex flex-col w-full" ref={containerRef}>
                 <div className="relative group">
                   <label htmlFor="charge" className="absolute -top-6 left-2">
                     Amount
@@ -517,11 +532,10 @@ function App() {
             <img src="./bg.webp" alt="" className="w-[130px]" />
 
             <div className="flex flex-col gap-2">
-              <p className="text-[.8rem] font-medium">Let's link up!</p>
               <ul className="flex gap-4">
                 <li>
                   <a
-                    href="https://www.linkedin.com/in/samson-njuguna-896a02243/"
+                    href="https://www.linkedin.com/in/sam-nj"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[1.2rem] duration-200 ease-out hover:text-[#3c019c]"
@@ -537,16 +551,6 @@ function App() {
                     className="text-[1.2rem] duration-200 ease-out hover:text-[#3c019c]"
                   >
                     <BsGithub />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://discord.com/users/1038333075433721926"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[1.2rem] duration-200 ease-out hover:text-[#3c019c]"
-                  >
-                    <BsDiscord />
                   </a>
                 </li>
               </ul>

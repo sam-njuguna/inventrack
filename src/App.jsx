@@ -8,9 +8,9 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 5000); // 3 seconds delay
+    }, 5000);
 
-    return () => clearTimeout(timer); // Clear the timer on unmount
+    return () => clearTimeout(timer); 
   }, []);
   return (
     <AnimatePresence>
